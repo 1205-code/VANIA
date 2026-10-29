@@ -1,0 +1,39 @@
+# Calendário normativo de referência. Posição em 29/10/2026.
+# ANTES de usar qualquer data: conferir prorrogação, novo edital ou revogação
+# (gov.br/pgfn, gov.br/receitafederal) e atualizar `conferido_em`.
+conferido_em: 2026-10-29
+eventos:
+  - data: 2026-10-30
+    hora: "20:59:59"
+    evento: Fim da adesão ao Edital RFB 10/2026 (contencioso de pequeno valor), em "Minhas Negociações de Dívidas"
+    fonte: Edital RFB 10/2026, item 4.1
+  - data: 2026-10-30
+    hora: "23:59:59"
+    evento: Fim da adesão ao Edital RFB 9/2026 (contencioso até R$ 50 mi), por processo digital
+    fonte: Edital RFB 9/2026, item 4.1
+  - data: 2026-10-30
+    evento: Último dia útil de outubro. Primeira prestação de qualquer adesão feita em outubro
+    fonte: Edital PGDAU 6/2026, art. 18; Editais RFB 9 e 10, item 3.4
+  - data: 2026-10-30
+    evento: Regularização de pendências da opção pelo Simples 2027 indeferida; fim da opção pelo regime regular de IBS/CBS (jan a jun/2027)
+    fonte: Res. CGSN 194/2026, arts. 1º, § 1º, II, e 2º
+  - data: 2026-11-03
+    ate: 2026-12-20
+    evento: Janela de cancelamento, IRRETRATÁVEL, da opção pelo Simples 2027 e da opção pelo regime regular IBS/CBS (PARE)
+    fonte: Res. CGSN 194/2026, arts. 1º, § 1º, I, e 2º, parágrafo único
+  - data: 2026-11-30
+    evento: Último dia útil de novembro
+    fonte: Calendário
+  - data: 2026-12-20
+    hora: "19:00"
+    evento: Fim da adesão ao Edital PGDAU 8/2026 (agricultura familiar) prorrogado
+    fonte: Edital PGDAU 10/2026, art. 2º
+  - data: 2026-12-30
+    evento: Data segura de pagamento em dezembro (31/12 sem expediente bancário ao público)
+    fonte: Prática bancária
+  - data: 2027-01-29
+    hora: "19:00"
+    evento: Fim da adesão aos Editais PGDAU 6/2026 e 9/2026 (Desenrola MEI) prorrogados; corte de inscrição 03/07/2026 (pequeno valor 01/10/2025). Adesão nesse dia obriga pagar a entrada no mesmo dia (último dia útil de janeiro)
+    fonte: Edital PGDAU 10/2026, arts. 1º e 3º
+recorrentes:
+  - DAS mensal e PGDAS-D vencem no dia 20 do mês seguinte ao da apuração (tarefa da CONTABILIDADE)

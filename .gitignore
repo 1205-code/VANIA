@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+
+# SIGILO: o repositório é PÚBLICO. Nenhum dado de cliente entra no git.
+# Só remova estas linhas depois de tornar o repositório PRIVADO.
+clientes/*
+!clientes/_MODELO/
+!clientes/README.md

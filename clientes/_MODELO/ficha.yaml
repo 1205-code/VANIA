@@ -1,0 +1,119 @@
+# FICHA DE CONTROLE: fonte da verdade do cliente.
+# Datas em AAAA-MM-DD. Valores em reais ENTRE ASPAS com ponto decimal ("1234.56").
+# Status: PENDENTE | EM ANDAMENTO | INFORMADO SEM PROVA | CONCLUÍDO | ATRASADO | BLOQUEADO | CANCELADO
+# Responsável (um só): ESCRITÓRIO | CLIENTE | CONTABILIDADE
+# CONCLUÍDO exige evidencia_recebida com arquivo E data; sem isso o motor rebaixa para INFORMADO SEM PROVA.
+# prazo_interno é opcional: o motor calcula 5 dias úteis antes do fatal.
+
+cliente:
+  razao_social: ""
+  cnpj: ""
+  municipio_uf: ""          # para conferir feriados locais
+  parecer_data:             # AAAA-MM-DD
+  parecer_arquivo: ""       # documentos/AAAA-MM-DD_CLIENTE_Parecer.pdf
+  advogado: ""
+
+acessos:                    # perguntas de abertura 1 a 4
+  procuracao_ecac_ate:      # AAAA-MM-DD
+  procuracao_outorgado: ""  # CPF do advogado ou CNPJ da sociedade
+  email_regularize: ""
+  pagador: ""               # quem paga e por qual canal
+  contador:
+    nome: ""
+    contato: ""
+    recebeu_calendario: false
+
+feriados_locais: []         # ex.: [2026-12-08] (estaduais e municipais do domicílio do cliente)
+
+tarefas:
+  # --- Tarefas extraídas do parecer: uma ação, um responsável, um portal, um prazo.
+  # - id: T01
+  #   providencia: ""
+  #   responsavel: ESCRITÓRIO
+  #   portal: Regularize
+  #   tipo: ato               # ato | pagamento | documento
+  #   prazo_fatal: 2026-11-30
+  #   depende_de: []
+  #   nao_retorno: false
+  #   evidencia_exigida: ""
+  #   status: PENDENTE
+  #   evidencia_recebida: {arquivo: "", data: }
+  #   fundamento: ""
+
+  # --- Obrigações permanentes (nascem de qualquer acordo; não apagar)
+  - id: P01
+    providencia: Manter correntes os tributos que vencerem após o acordo; regularizar em até 90 dias os que se tornarem exigíveis
+    responsavel: CONTABILIDADE
+    portal: e-CAC / Portal do Simples
+    tipo: ato
+    permanente: true
+    evidencia_exigida: Relatório de Situação Fiscal mensal sem débito novo
+    status: EM ANDAMENTO
+    fundamento: Edital PGDAU 6/2026, art. 17, X e XI; Portaria PGFN 6.757/2022, art. 5º, X e XI
+  - id: P02
+    providencia: Manter regularidade do FGTS
+    responsavel: CONTABILIDADE
+    portal: FGTS Digital / Caixa
+    tipo: ato
+    permanente: true
+    evidencia_exigida: CRF vigente
+    status: EM ANDAMENTO
+    fundamento: Obrigação do acordo
+  - id: P03
+    providencia: Manter atualizado e lido o e-mail cadastrado no Regularize
+    responsavel: ESCRITÓRIO
+    portal: Regularize (R9)
+    tipo: ato
+    permanente: true
+    evidencia_exigida: Print dos dados cadastrais com o e-mail
+    status: EM ANDAMENTO
+    fundamento: Edital PGDAU 6/2026, art. 22, § 1º
+  - id: P04
+    providencia: Monitorar Caixa Postal/DTE da Receita e notificações do Regularize (rotina mensal)
+    responsavel: ESCRITÓRIO
+    portal: e-CAC (R3) / Regularize (R9)
+    tipo: ato
+    permanente: true
+    evidencia_exigida: Print mensal datado
+    status: EM ANDAMENTO
+    fundamento: Skill, Fase 2
+
+acordos: []
+  # - numero: ""
+  #   orgao: PGFN             # PGFN | RFB | SIMPLES
+  #   modalidade: ""
+  #   situacao: ATIVO         # ATIVO | EM RESCISÃO | RESCINDIDO | CANCELADO | QUITADO
+  #   data_adesao:
+  #   n_prestacoes:
+  #   pagas: 0
+  #   em_aberto:
+  #   atrasadas: 0
+  #   proximo_vencimento:
+  #   valor_guia: "0.00"      # SÓ do documento emitido pelo sistema oficial
+  #   fonte_valor: ""         # ex.: Guia Regularize nº ..., emitida em ...
+
+pagamentos: []
+  # - acordo: ""              # número do acordo acima
+  #   referencia: "Prestação 01/60"
+  #   guia: ""                # nº do documento / código de barras
+  #   origem_guia: REGULARIZE # REGULARIZE | E-CAC | PORTAL DE SERVIÇOS | PORTAL DO SIMPLES | SICALC
+  #   cnpj_pagador: ""
+  #   valor_guia: "0.00"
+  #   valor_pago: "0.00"
+  #   vencimento:
+  #   data_pagamento:
+  #   tipo_comprovante: COMPROVANTE DEFINITIVO   # ou AGENDAMENTO, EM PROCESSAMENTO...
+  #   autenticacao: false
+  #   arquivo: ""
+  #   baixa_no_sistema: false
+
+alertas: []
+  # - tipo: NOTIFICAÇÃO DE RESCISÃO   # | EXCLUSÃO | BLOQUEIO JUDICIAL | INTIMAÇÃO | TERMO DE EXCLUSÃO DO SIMPLES | OUTRO
+  #   descricao: ""
+  #   data_ciencia:
+  #   prazo_fatal:
+  #   resolvido: false
+
+historico: []
+  # - data: 2026-10-29
+  #   evento: Abertura do acompanhamento
